@@ -1,0 +1,24 @@
+{
+  "name": "worker_threads_server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "start:dev": "pm2 restart ecosystem.config.js --only worker_threads_server_dev",
+    "start:test": "pm2 restart ecosystem.config.js --only worker_threads_server_test",
+    "start:sim": "pm2 restart ecosystem.config.js --only worker_threads_server_sim",
+    "start:prod": "pm2 restart ecosystem.config.js --only worker_threads_server_prod",
+    "stop:dev": "pm2 stop worker_threads_server_dev && pm2 delete worker_threads_server_dev",
+    "stop:test": "pm2 stop worker_threads_server_test && pm2 delete worker_threads_server_test",
+    "stop:sim": "pm2 stop worker_threads_server_sim && pm2 delete worker_threads_server_sim",
+    "stop:prod": "pm2 stop worker_threads_server_prod && pm2 delete worker_threads_server_prod"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0"
+  }
+}
